@@ -48,3 +48,13 @@ function verifyJWT(req, res, next){
         next();
     })
 }
+
+
+
+
+
+
+// 1 step
+app.get('/', (req, res)=>{
+    res.send('Experst Cars Websites!')
+});
