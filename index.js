@@ -96,6 +96,14 @@ async function run(){
             res.send(service);
         });
 
+        // order api to create a services sheet in collections
+        app.post('/services', async (req, res)=>{
+            const service= req.body;
+            const result = await serviceCollection.insertOne(service);
+            console.log(result)
+            res.send(result);
+        });
+        
         // get orders in ui
         app.get('/orders', verifyJWT, async (req, res)=>{
             // jwt token 
@@ -123,6 +131,8 @@ async function run(){
             const orders = await cursor.toArray();
             res.send(orders);
         });
+        // add services 
+        
 
         // order api to create a order sheet in collections
         app.post('/orders', async (req, res)=>{
