@@ -48,6 +48,23 @@ function verifyJWT(req, res, next){
         next();
     })
 }
+// 3.1
+async function run(){
+    // 3.3
+    try{
+        // 3.5
+        const serviceCollection = client.db('superCar').collection('service');
+        // order collection
+        const ordersCollection = client.db('superCar').collection('orders');
+        
+        // jwt 
+        app.post('/jwt', (req, res)=>{
+            const user = req.body;
+            // console.log(user);
+            const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '10h'});
+            res.send({token});
+
+        })
 
 
 
