@@ -128,17 +128,19 @@ async function run(){
             const resutl = await ordersCollection.updateOne(query, updateDocs);
             res.send(resutl)
         })
+
         // delete operations 
         app.delete('/orders/:id', async (req, res)=>{
             const id = req.params.id;
-            console.log(id)
-            const query = {_id: ObjectId(id)}
+            console.log(id);
+            const query = {_id: ObjectId(id)};
             const result = await ordersCollection.deleteOne(query);
             res.send(result);
         })
+
         // review sections
         app.put('/reviews', (req, res)=>{
-            
+
         })
     }
          // 3.4
@@ -148,10 +150,6 @@ async function run(){
 }
 // 3.2
 run().catch(error=>console.error(error));
-
-
-
-
 
 
 
