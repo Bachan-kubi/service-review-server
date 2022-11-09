@@ -58,3 +58,8 @@ function verifyJWT(req, res, next){
 app.get('/', (req, res)=>{
     res.send('Experst Cars Websites!')
 });
+
+app.listen(port, ()=>{
+    console.log(`listening on ${port}`);
+})
+// 1 steop fininshed.
