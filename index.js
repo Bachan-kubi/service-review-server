@@ -129,13 +129,13 @@ async function run(){
             res.send(resutl)
         })
         // delete operations 
-        // app.delete('/orders/:id', async (req, res)=>{
-        //     const id = req.params.id;
-        //     console.log(id)
-        //     const query = {_id: ObjectId(id)}
-        //     const result = await ordersCollection.deleteOne(query);
-        //     res.send(result);
-        // })
+        app.delete('/orders/:id', async (req, res)=>{
+            const id = req.params.id;
+            console.log(id)
+            const query = {_id: ObjectId(id)}
+            const result = await ordersCollection.deleteOne(query);
+            res.send(result);
+        })
     }
          // 3.4
     finally{
