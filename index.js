@@ -136,6 +136,10 @@ async function run(){
             const result = await ordersCollection.deleteOne(query);
             res.send(result);
         })
+        // review sections
+        app.put('/reviews', (req, res)=>{
+            
+        })
     }
          // 3.4
     finally{
